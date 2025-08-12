@@ -44,9 +44,9 @@ fun TaskApp(onError: (String) -> Unit) {
     var taskList by remember { mutableStateOf(listOf<String>()) }
 
     Box(modifier = Modifier.fillMaxSize()) {
-        // Background image
+
         Image(
-            painter = painterResource(id = R.drawable.ImagenCool),
+            painter = painterResource(id = R.drawable.imagen),
             contentDescription = null,
             modifier = Modifier.fillMaxSize(),
             contentScale = ContentScale.Crop
@@ -76,7 +76,7 @@ fun TaskApp(onError: (String) -> Unit) {
                     onValueChange = { taskText = it },
                     modifier = Modifier.weight(1f),
                     placeholder = { Text(stringResource(R.string.hint_task)) },
-                    singleLine = true // ✅ Prevent multiline in the input
+                    singleLine = true
                 )
                 Spacer(modifier = Modifier.width(8.dp))
                 Button(
