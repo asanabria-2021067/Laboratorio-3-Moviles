@@ -62,7 +62,7 @@ fun TaskApp(onError: (String) -> Unit) {
                 text = stringResource(R.string.app_title),
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold,
-                color = Color.White
+                color = Color.Gray
             )
 
             Spacer(modifier = Modifier.height(16.dp))
