@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Laboratorio 3</string>
+    <string name="app_name">Laboratorio3</string>
+    <string name="app_title">Mis Tareas</string>
+    <string name="hint_task">Escribe una nueva tarea</string>
+    <string name="btn_add">Agregar</string>
+    <string name="error_empty_task">Por favor escribe una tarea</string>
 </resources>
