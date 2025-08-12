@@ -1,4 +1,4 @@
-package uvg.edu.laboratorio3
+package com.example.lab3
 
 import android.os.Bundle
 import android.widget.Toast
@@ -20,6 +20,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import uvg.edu.laboratorio3.R
 import uvg.edu.laboratorio3.ui.theme.Laboratorio3Theme
 
 class MainActivity : ComponentActivity() {
@@ -43,8 +44,9 @@ fun TaskApp(onError: (String) -> Unit) {
     var taskList by remember { mutableStateOf(listOf<String>()) }
 
     Box(modifier = Modifier.fillMaxSize()) {
+        // Background image
         Image(
-            painter = painterResource(id = R.drawable.bg_image),
+            painter = painterResource(id = R.drawable.ImagenCool),
             contentDescription = null,
             modifier = Modifier.fillMaxSize(),
             contentScale = ContentScale.Crop
@@ -73,16 +75,15 @@ fun TaskApp(onError: (String) -> Unit) {
                     value = taskText,
                     onValueChange = { taskText = it },
                     modifier = Modifier.weight(1f),
-                    placeholder = { Text(stringResource(R.string.hint_task)) }
+                    placeholder = { Text(stringResource(R.string.hint_task)) },
+                    singleLine = true // ✅ Prevent multiline in the input
                 )
                 Spacer(modifier = Modifier.width(8.dp))
                 Button(
                     onClick = {
                         if (taskText.isNotBlank()) {
-                            taskList = taskList + taskText
+                            taskList = taskList + taskText.trim()
                             taskText = ""
-                        } else {
-                            onError(stringResource(R.string.error_empty_task))
                         }
                     }
                 ) {
@@ -98,7 +99,9 @@ fun TaskApp(onError: (String) -> Unit) {
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(vertical = 4.dp),
-                        colors = CardDefaults.cardColors(containerColor = Color.White.copy(alpha = 0.9f))
+                        colors = CardDefaults.cardColors(
+                            containerColor = Color.White.copy(alpha = 0.9f)
+                        )
                     ) {
                         Text(
                             text = task,
