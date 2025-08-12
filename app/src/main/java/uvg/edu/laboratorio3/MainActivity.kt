@@ -1,4 +1,4 @@
-package com.example.lab3
+package uvg.edu.laboratorio3
 
 import android.os.Bundle
 import android.widget.Toast
