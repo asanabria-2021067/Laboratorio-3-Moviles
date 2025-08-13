@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Laboratorio3</string>
-    <string name="app_title">Las Tareas de Montenegro</string>
-    <string name="hint_task">Escribe una nueva tarea</string>
+    <string name="app_title">Mis Tareas</string>
+    <string name="hint_task">Escribe una nueva tarea...</string>
     <string name="btn_add">Agregar</string>
-    <string name="error_empty_task">Por favor escribe una tarea</string>
+    <string name="error_empty_task">La tarea no puede estar vacía.</string>
+    <string name="cd_delete_task">Eliminar tarea %1$s</string>
 </resources>
